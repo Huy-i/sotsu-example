@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -12,7 +14,8 @@ class HomeController extends Controller
         // Retrieve the authenticated user
         $user = Auth::user();
 
-        // Return the 'home' view with the authenticated user
-        return view('auth.home', compact('user'));
+        $categories=Category::all();
+
+        return view('home.index',compact('user','categories'));
     }
 }
