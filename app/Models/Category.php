@@ -10,7 +10,7 @@ class Category extends Model
         'category_name',
     ];
 
-    // public function questions(){
-    //   return $this->hasMany(Question::class);
-    // }
+    public function questions(){
+    return $this->hasMany(Question::class);
+    }
 }
