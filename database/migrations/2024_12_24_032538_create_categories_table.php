@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')
-                  ->constrained()
-                  ->onDelete('cascade');
+                ->constrained() // Automatically references the 'id' column of the 'categories' table
+                ->onDelete('cascade'); // If a category is deleted, its associated questions will also be deleted
             $table->string('question');
             $table->string('answer');
             $table->json('options');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

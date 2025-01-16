@@ -14,14 +14,15 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')
-                ->constrained() // Automatically references the 'id' column of the 'categories' table
-                ->onDelete('cascade'); // If a category is deleted, its associated questions will also be deleted
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->string('question');
             $table->string('answer');
             $table->json('options');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
