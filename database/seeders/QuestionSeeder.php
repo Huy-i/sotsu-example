@@ -13,27 +13,31 @@ class QuestionSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        $n1Category =Category::where ('category_name','N1')->first();
-        if(! $n1Category){
-            $n1Category=Category::create([
-                'category_name'=>'JLPT N1',
+        // JLPT N1 Category
+        $n1Category = Category::where('category_name', 'N1')->first();
+        if (! $n1Category) {
+            $n1Category = Category::create([
+                'category_name' => 'JLPT N1',
             ]);
         }
 
-        $n2Category =Category::where ('category_name','N2')->first();
-        if(! $n2Category){
-            $n2Category=Category::create([
-                'category_name'=>'JLPT N2',
+        // JLPT N2 Category
+        $n2Category = Category::where('category_name', 'N2')->first();
+        if (! $n2Category) {
+            $n2Category = Category::create([
+                'category_name' => 'JLPT N2',
             ]);
         }
 
-        $n3Category =Category::where ('category_name','N3')->first();
-        if(! $n3Category){
-            $n1Category=Category::create([
-                'category_name'=>'JLPT N3',
+        // JLPT N3 Category
+        $n3Category = Category::where('category_name', 'N3')->first();
+        if (! $n3Category) {
+            $n3Category = Category::create([
+                'category_name' => 'JLPT N3',
             ]);
         }
+
+        // Sample questions for N1, N2, and N3
         $questions = [
             // JLPT N1 Questions
             [
@@ -147,4 +151,3 @@ class QuestionSeeder extends Seeder
         }
     }
 }
-
